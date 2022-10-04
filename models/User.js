@@ -16,29 +16,35 @@ const userSchema = new Schema(
                 validator: () => Promise.resolve(false),
                 message: 'Email validation failed'
               }
-        }    
-    }
-)
+        },
+        thoughts :[
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Thought',
+            },
+        ],
+        friends: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'User',
+            },
+        ],
+
+        },  
+        {
+            toJSON: {
+                virtuals: true,
+            },
+            id:false,
+        }  
+    );
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//Create a virtual property
+userSchema
+  .virtual('friendCount') .get(function () {
+    return this.friends.length;
+  });
 
 const User = model('user', userSchema);
 
