@@ -11,7 +11,7 @@ connection.once('open', async () => {
   const users = getRandomName(5);
   const email = getRandomEmail(5)
   console.log(users);
-
+ console.log(email);
 
 
   await User.collection.insertOne(users,email);
