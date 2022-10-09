@@ -1,57 +1,28 @@
-const names = [
-    'Aaran',
-    'Aaren',
-    'Aarez',
-    'Aarman',
-    'Aaron',
-    'Aaron-James',
-    'Aarron',
-    'Aaryan',
-    'Aaryn',
-    'Aayan',
-    'Aazaan',
-    'Abaan',
-    'Abbas',
-    'Abdallah',
-    'Abdalroof',
-    'Abdihakim',
-    'Abdirahman',
-    'Abdisalam',
-    'Abdul',
-    'Abdul-Aziz',
-    'Abdulbasir',
-    'Abdulkadir',
-    'Abdulkarem',
-    'Ze',
-    'Zechariah',
-    'Zeek',
-    'Zeeshan',
-    'Zeid',
-    'Zein',
-    'Zen',
-    'Zendel',
-    'Zenith',
-    'Zennon',
-    'Zeph',
-    'Zerah',
-    'Zhen',
-    'Zhi',
-    'Zhong',
-    'Zhuo',
-    'Zi',
-    'Zidane',
-    'Zijie',
-    'Zinedine',
-    'Zion',
-    'Zishan',
-    'Ziya',
-    'Ziyaan',
-    'Zohaib',
-    'Zohair',
-    'Zoubaeir',
-    'Zubair',
-    'Zubayr',
-    'Zuriel',
-    ``,
-  ];
-  
+  const names =[
+    'sal',
+    'Lernantino',
+    'Amiko',
+    'Jordan',
+    'Blake',
+ ];
+
+ const email = [
+  'sal@hotmail.com',
+  'lernantino@gmail.com',
+  'amiko2k20@aol.com',
+  'jordan99@msn.com',
+  'the_blake@yahoo.com',
+ ]
+  //const users = [];
+
+  // Get a random item given an array
+const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+// Gets a random full name
+const getRandomName = () =>
+  `${getRandomArrItem(names)}`;
+
+  console.log(getRandomName);
+
+  module.exports = { getRandomName};
+
