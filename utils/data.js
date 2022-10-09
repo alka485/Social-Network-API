@@ -24,5 +24,19 @@ const getRandomName = () =>
 
   console.log(getRandomName);
 
-  module.exports = { getRandomName};
+  const getRandomEmail= (int) => {
+    if (int === 1) {
+      return getRandomArrItem(email);
+    }
+    let results = [];
+    for (let i = 0; i < int; i++) {
+      results.push({
+        responseBody: getRandomArrItem(email),
+        username: getRandomName(),
+      });
+    }
+    return results;
+  };
+
+  module.exports = { getRandomName ,getRandomEmail};
 
