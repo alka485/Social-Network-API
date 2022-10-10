@@ -36,10 +36,6 @@ const getRandomName = () =>
   `${getRandomArrItem(email)}`;
 
   // Gets a random thought
-  // const getRandomThought = () =>
-  // `${getRandomThought(possibleThoughts)}`;
-  // console.log(getRandomThought);
-
   const getRandomThought = (int) => {
     let results = [];
     for(let i = 0; i < int; i++) {
