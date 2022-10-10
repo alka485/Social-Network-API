@@ -14,11 +14,8 @@ connection.once('open', async () => {
  console.log(email);
 
 
-  await User.collection.insertOne(users,email);
+  await User.collection.insertOne({username: users,email: email});
 
-  // loop through the saved videos, for each video we need to generate a video response and insert the video responses
-  console.table(users);
-  //console.table(videos);
-  console.info('Seeding complete! 🌱');
+   console.info('Seeding complete! 🌱');
   process.exit(0);
 });
