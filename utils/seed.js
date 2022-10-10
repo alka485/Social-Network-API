@@ -18,7 +18,7 @@ connection.once('open', async () => {
   console.log(thought);
 
 
-  await User.collection.insertOne({username: users,email: email,thoughts:thought});
+  await User.collection.insertOne({username: users,email: email});
   await Thought.collection.insertMany(thought);
 
    console.info('Seeding complete! 🌱');
