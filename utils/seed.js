@@ -20,6 +20,7 @@ connection.once('open', async () => {
 
   await User.collection.insertOne({username: users,email: email});
   await Thought.collection.insertMany(thought);
+  //await Thought.collection.insertOne(thought);
 
    console.info('Seeding complete! 🌱');
   process.exit(0);
