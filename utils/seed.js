@@ -19,6 +19,7 @@ connection.once('open', async () => {
 
 
   await User.collection.insertOne({username: users,email: email});
+  //await User.collection.insertMany(users);
   await Thought.collection.insertMany(thought);
   //await Thought.collection.insertOne(thought);
 

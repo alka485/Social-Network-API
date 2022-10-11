@@ -8,10 +8,10 @@ module.exports = {
     },
     getSingleThought(req,res){
         Thought.findOne({_id:req.params.thoughtId})
-        .then((thought) =>
-          !thought
+        .then((thoughts) =>
+          !thoughts
             ? res.status(404).json({message: 'No thought with that ID' })
-            : res.json(thought)
+            : res.json(thoughts)
         )
         .catch((err) => res.status(500).json(err));
 
@@ -90,7 +90,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
   // Remove video response
-  removethoughtReaction(req, res) {
+  removeThoughtReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId},
       { $pull: { reactions: { reactionId: req.params.reactionId } } },
