@@ -36,16 +36,24 @@ const getRandomName = () =>
   `${getRandomArrItem(email)}`;
 
   // Gets a random thought
+
   const getRandomThought = (int) => {
+    if(int === 1){
+      return getRandomArrItem(possibleThoughts);
+    }
     let results = [];
     for(let i = 0; i < int; i++) {
       results.push({
         thoughtText : getRandomArrItem(possibleThoughts),
+        username: getRandomName(),
 
       });
     }
     return results;
   }
+
+  // const getRandomThought = () =>
+  // `${getRandomArrItem(possibleThoughts)}`;
   
   module.exports = { getRandomName ,getRandomEmail, getRandomThought};
 
