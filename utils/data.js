@@ -21,6 +21,14 @@
    'If you want to become big, stop thinking small.',
    'One small thought in the morning can change your whole day',
  ];
+
+ const possibleReactions =[
+         'Smile',
+         'Like',
+         'Angry',
+         'Unlike',
+         'Hate'
+ ];
   //const users = [];
 
   // Get a random item given an array
@@ -46,14 +54,33 @@ const getRandomName = () =>
       results.push({
         thoughtText : getRandomArrItem(possibleThoughts),
         username: getRandomName(),
+        reactions: [...getRandomReaction(3)],
 
       });
     }
     return results;
   }
 
+  //Get a Random Reaction
+ 
+  const getRandomReaction = (int) => {
+    if(int === 1){
+      return getRandomArrItem(possibleReactions);
+    }
+    let results = [];
+    for(let i = 0; i < int; i++) {
+      results.push({
+        reactionBody : getRandomArrItem(possibleReactions),
+        username: getRandomName(),
+
+      });
+    }
+    return results;
+  };
+
+
   // const getRandomThought = () =>
   // `${getRandomArrItem(possibleThoughts)}`;
   
-  module.exports = { getRandomName ,getRandomEmail, getRandomThought};
+  module.exports = { getRandomName ,getRandomEmail, getRandomThought,getRandomReaction};
 

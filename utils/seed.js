@@ -1,6 +1,6 @@
 const connection = require('../config/connection');
-const { User, Thought } = require('../models');
-const {getRandomName, getRandomEmail , getRandomThought} = require('./data');
+const { User, Thought} = require('../models');
+const {getRandomName, getRandomEmail , getRandomThought } = require('./data');
 
 connection.on('error', (err) => err);
 
@@ -8,6 +8,7 @@ connection.once('open', async () => {
   console.log('connected');
   await User.deleteMany({});
   await Thought.deleteMany({});
+  
 
   const users = getRandomName(5);
   const email = getRandomEmail(5)
