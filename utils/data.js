@@ -1,6 +1,6 @@
 const { Thought } = require("../models");
 
-  const names =[
+  const username =[
     'sal',
     'Lernantino',
     'Amiko',
@@ -38,7 +38,7 @@ const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 // Gets a random full name
 const getRandomName = () =>
-  `${getRandomArrItem(names)}`;
+  `${getRandomArrItem(username)}`;
   console.log(getRandomName);
 
  // Gets a random email 
