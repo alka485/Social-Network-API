@@ -11,16 +11,25 @@ connection.once('open', async () => {
   
 
   const users = getRandomName(5);
+  // const users =[];
   const email = getRandomEmail(5)
   const thought = getRandomThought(5);
+
+  for(let i =0; i < 20; i++){
+    users.push({
+      username,
+      email,
+      thought
+    });
+  }
 
   console.log(users);
   console.log(email);
   console.log(thought);
 
 
-  await User.collection.insertOne({username: users,email: email});
-  //await User.collection.insertMany(users);
+  //await User.collection.insertOne({username: users,email: email});
+  await User.collection.insertMany(users);
   await Thought.collection.insertMany(thought);
   //await Thought.collection.insertOne(thought);
 

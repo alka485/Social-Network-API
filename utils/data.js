@@ -1,3 +1,5 @@
+const { Thought } = require("../models");
+
   const names =[
     'sal',
     'Lernantino',
@@ -52,6 +54,7 @@ const getRandomName = () =>
     let results = [];
     for(let i = 0; i < int; i++) {
       results.push({
+        thoughtId:getRandomArrItem(possibleThoughts),
         thoughtText : getRandomArrItem(possibleThoughts),
         username: getRandomName(),
         reactions: [...getRandomReaction(3)],
