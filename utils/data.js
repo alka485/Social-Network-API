@@ -1,4 +1,4 @@
-const { Thought } = require("../models");
+//const { Thought } = require("../models");
 
   const username =[
     'sal',
@@ -35,15 +35,12 @@ const { Thought } = require("../models");
 
   // Get a random item given an array
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
-// console.log(getRandomArrItem);
-// Gets a random full name
-// const getRandomName = () =>
-//   `${getRandomArrItem(username)}`;
-//   console.log(getRandomName);
+//console.log(getRandomArrItem); [Function: getRandomArrItem]
 
-//  // Gets a random email 
+  // Gets a random email 
   const getRandomEmail = () =>
   `${getRandomArrItem(email)}`;
+  //console.log(getRandomEmail); [Function: getRandomEmail]
 
   // Gets a random thought
 
@@ -56,8 +53,8 @@ const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
       results.push({
         
         thoughtText : getRandomArrItem(possibleThoughts),
-        //username: getRandomName(),
-        username : getRandomArrItem(username),
+        username: getRandomName(),
+        //username : getRandomArrItem(username),
         reactions: [...getRandomReaction(3)],
 
       });

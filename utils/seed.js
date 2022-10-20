@@ -12,6 +12,7 @@ connection.once('open', async () => {
   const thought = getRandomThought(5);
   const usernames = getRandomName(5);
   const emails = getRandomEmail(5)
+  console.log(emails);
 //  console.log(usernames);
 
 
@@ -23,8 +24,8 @@ connection.once('open', async () => {
   for( let i =0 ; i < 5 ; i++){
     users.push({
               username:usernames[i],
-              //email : emails[i],
-              email : emails,
+              email : emails[i],
+              // email : emails,
               //emails,
               thoughts:[thoughts[i]._id]
             })
