@@ -6,36 +6,34 @@ connection.on('error', (err) => err);
 
 connection.once('open', async () => {
   console.log('connected');
-  // await User.deleteMany({});
-  // await Thought.deleteMany({});
-
-  await Thought.deleteMany({});
   await User.deleteMany({});
-  
+  await Thought.deleteMany({});
 
-  //const users = getRandomName(5);
-   const users =[];
-  const email = getRandomEmail(5)
   const thought = getRandomThought(5);
-
-  for(let i =0; i < 20; i++){
-    const username = getRandomName(5);
-    users.push({
-      username,
-      email,
-      thought
-    });
-  }
-
-  console.log(users);
-  console.log(email);
-  console.log(thought);
+  const usernames = getRandomName(5);
+  const emails = getRandomEmail(5)
+//  console.log(usernames);
 
 
-  //await User.collection.insertOne({username: users,email: email});
-  await User.collection.insertMany(users);
   await Thought.collection.insertMany(thought);
-  //await Thought.collection.insertOne(thought);
+  var thoughts = await Thought.find();
+  
+  var users = [];
+
+  for( let i =0 ; i < 5 ; i++){
+    users.push({
+              username:usernames[i],
+              //email : emails[i],
+              email : emails,
+              //emails,
+              thoughts:[thoughts[i]._id]
+            })
+
+  }
+  await User.collection.insertMany(users);
+  
+  //await User.collection.insertMany(usernames); this does not work
+ 
 
 console.table(users);
 console.table(thought);

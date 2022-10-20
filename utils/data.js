@@ -35,13 +35,13 @@ const { Thought } = require("../models");
 
   // Get a random item given an array
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
-
+// console.log(getRandomArrItem);
 // Gets a random full name
-const getRandomName = () =>
-  `${getRandomArrItem(username)}`;
-  console.log(getRandomName);
+// const getRandomName = () =>
+//   `${getRandomArrItem(username)}`;
+//   console.log(getRandomName);
 
- // Gets a random email 
+//  // Gets a random email 
   const getRandomEmail = () =>
   `${getRandomArrItem(email)}`;
 
@@ -54,9 +54,10 @@ const getRandomName = () =>
     let results = [];
     for(let i = 0; i < int; i++) {
       results.push({
-        thoughtId:getRandomArrItem(possibleThoughts),
+        
         thoughtText : getRandomArrItem(possibleThoughts),
-        username: getRandomName(),
+        //username: getRandomName(),
+        username : getRandomArrItem(username),
         reactions: [...getRandomReaction(3)],
 
       });
@@ -81,9 +82,25 @@ const getRandomName = () =>
     return results;
   };
 
+  const getRandomName = (int) => {
+    if(int === 1){
+      return getRandomArrItem(username);
+    }
+    let results = [];
+    for(let i = 0; i < int; i++) {
+      results.push({
+        userId:getRandomArrItem(username),
+        email:getRandomEmail(email),
+        username : getRandomArrItem(username),
+        thoughts: [...getRandomThought(5)],
 
-  // const getRandomThought = () =>
-  // `${getRandomArrItem(possibleThoughts)}`;
+      });
+    }
+    return results;
+  }
+
+
+  
   
   module.exports = { getRandomName ,getRandomEmail, getRandomThought,getRandomReaction};
 

@@ -4,14 +4,14 @@ const userSchema = new Schema(
     {
         username : {
              type: String, 
-             unique: true, 
+             unique: false, 
              required : true, 
              trim : true,
             },
         email : {
             type: String,
             required: true,
-            Unique: true,
+            //unique: true,
             validate: {
                 validator: () => Promise.resolve(false),
                 message: 'Email validation failed'
@@ -36,7 +36,7 @@ const userSchema = new Schema(
                 virtuals: true,
                 getters: true,
             },
-            id:false,
+            // id:false,
         }  
     );
 
