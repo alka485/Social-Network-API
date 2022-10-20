@@ -24,6 +24,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
 
+
   //Delete User
 
   deleteUser(req, res) {
