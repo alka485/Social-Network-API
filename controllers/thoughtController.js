@@ -76,21 +76,21 @@ module.exports = {
           )
           .catch((err) => res.status(500).json(err));
       },
-      // Add a video response
-  addThoughtReaction(req, res) {
+     
+      addThoughtReaction(req, res) {
       Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
-      { $addToSet: { responses: req.body } },
+      { $addToSet: {reactions: req.body } },
       { runValidators: true, new: true }
     )
       .then((thought) =>
         !thought
-          ? res.status(404).json({ message: 'No thought with this id!' })
-          : res.json(video)
+          ? res.status(404).json({ message: 'No reaction with this id!' })
+          : res.json(thought)
       )
-      .catch((err) => res.status(500).json(err));
+      .catch((err) => {console.log(err);res.status(500).json(err)});
   },
-  // Remove video response
+  // 
   removeThoughtReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId},
@@ -99,7 +99,7 @@ module.exports = {
     )
       .then((thought) =>
         !thought
-          ? res.status(404).json({ message: 'No thought with this id!' })
+          ? res.status(404).json({ message: 'No reaction with this id!' })
           : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));

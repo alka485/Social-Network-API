@@ -38,8 +38,7 @@ const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 //console.log(getRandomArrItem); [Function: getRandomArrItem]
 
   // Gets a random email 
-  const getRandomEmail = () =>
-  `${getRandomArrItem(email)}`;
+  //const getRandomEmail = (int) => [...Array(int)].map(() =>`${getRandomArrItem(email)}`);
   //console.log(getRandomEmail); [Function: getRandomEmail]
 
   // Gets a random thought
@@ -87,7 +86,7 @@ const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
     for(let i = 0; i < int; i++) {
       results.push({
         userId:getRandomArrItem(username),
-        email:getRandomEmail(email),
+        email:getRandomArrItem(email),
         username : getRandomArrItem(username),
         thoughts: [...getRandomThought(5)],
 
@@ -99,5 +98,5 @@ const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
   
   
-  module.exports = { getRandomName ,getRandomEmail, getRandomThought,getRandomReaction};
+  module.exports = { getRandomName , email, getRandomThought,getRandomReaction};
 
