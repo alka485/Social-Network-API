@@ -6,9 +6,8 @@ This is an API for a social network web application where users can share their 
 
 To see how the API works using Insomnia, see the walk-through demonstration videos here:
 
-https://drive.google.com/file/d/1_oYhl9h4DP8q40TVd7Hw1i9aRY3ie-rW/view
+https://drive.google.com/file/d/1lxJUWoTgDk3jhLlJq3c6_XCIWDs2uNQW/view
 
-https://drive.google.com/file/d/1vuatyRMS7I1JBk1MrZk5CrgygrydKC9Z/view
 
 ## Table of Contents
 
